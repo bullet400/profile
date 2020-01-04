@@ -51,4 +51,4 @@ def upvotes(request, product_id):
 		product=get_object_or_404(Product, pk=product_id)
 		product.vote_total +=1
 		product.save()
-		return redirect('/products/detail/' + str(product.id)) #or product.id
+		return redirect('/products/detail/' + str(product.id)) #or product.id for the products
