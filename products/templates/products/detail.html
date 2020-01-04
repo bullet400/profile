@@ -1,0 +1,90 @@
+
+  {% extends 'base.html' %}
+  {% block content %}
+{% load static %}
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+    <img class="rounded" href ="{{product.icon.url}}" heigth="100" width="700"/>
+    </div>
+      <div class="col-8">
+        <h5>{{product.title}}
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-10">
+          <!-- <img src="{% static 'bullet.jpg' %}" alt="image" height="100" width="890">-->
+          <img src="{{ product.image.url }}" class="rounded"  alt="{{product.title}}" {{product.image}} heigth="10" width="900" />
+        </div>
+        <div class="col-2">
+        <a href="javascript:{document.getElementById('upvotes').submit()}"><button type="button" class="btn btn-primary btn-lg btn-block">
+          {{product.vote_total}}<span class="oi oi-caret-top"></span> Upvotes</button></a>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-4">
+            <p>Published by : {{product.hunter}}</p>
+            </div>
+            <div class="col-6 text-right">
+            {{product.pub_date}}
+            </div>
+        </div>
+            <div class="row">
+              <div class="col-10">
+                <p>{{product.body}}</p>
+                  </div>
+                  </div>
+            <form method="POST" action="{% url 'upvotes' product.id %}" id="upvotes">
+              {% csrf_token %}
+              <input type="hidden" />
+              </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
