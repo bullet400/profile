@@ -52,3 +52,6 @@ def upvotes(request, product_id):
 		product.vote_total +=1
 		product.save()
 		return redirect('/products/detail/' + str(product.id)) #or product.id for the products product product specific
+
+def edx(request):
+	return render(request, 'products/edx.html')

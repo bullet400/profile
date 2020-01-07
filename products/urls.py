@@ -6,7 +6,8 @@ urlpatterns =[
         path('create/', views.create, name='create'),
         #path('detail/<int:product_id>/', views.detail, name='detail'),
         path('detail/<int:product_id>/', views.detail, name='detail'),
-        path('detail/<int:product_id>/upvotes', views.upvotes, name='upvotes')
+        path('detail/<int:product_id>/upvotes', views.upvotes, name='upvotes'),
+        path('edx/', views.edx, name='edx'),
 
 
 ]
